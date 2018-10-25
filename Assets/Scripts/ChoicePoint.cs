@@ -16,6 +16,11 @@ public class ChoicePoint : MonoBehaviour {
         {
             StartGame();
         }
+        if (Input.GetKeyDown(KeyCode.Return) && currentChoice == 1)
+        {
+            ExitGame();
+        }
+
         Choosing();
 	}
 
@@ -42,5 +47,10 @@ public class ChoicePoint : MonoBehaviour {
     private void StartGame()
     {
         SceneManager.LoadScene(1);
+    }
+
+    private void ExitGame()
+    {
+        Application.Quit();
     }
 }
