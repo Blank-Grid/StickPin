@@ -68,6 +68,10 @@ public class GameManager : MonoBehaviour {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
+    private void CreateSaveGO()
+    {
+
+    }
     private void Save()
     {
         //Save save = CreateSaveGO();
