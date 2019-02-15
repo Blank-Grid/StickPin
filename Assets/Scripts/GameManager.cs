@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using System.Xml;
 
 public class GameManager : MonoBehaviour {
     private Transform startPoint;
@@ -65,6 +66,27 @@ public class GameManager : MonoBehaviour {
         }
         yield return new WaitForSeconds(0.2f);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    private void Save()
+    {
+        //Save save = CreateSaveGO();
+        //xml文件保存路径
+        string filepath = Application.dataPath + "/Streamingfile" + "/data.txt";
+        //创建xml文档
+        XmlDocument xmlDoc = new XmlDocument();
+        //创建根节点
+        XmlElement root = xmlDoc.CreateElement("save");
+        //设置根节点的值
+        root.SetAttribute("name", "Rank");
+
+        XmlElement score;
+        XmlElement player;
+    }
+
+    private void Load()
+    {
+
     }
 }
 
